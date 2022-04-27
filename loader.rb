@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+require 'i18n'
+require 'bundler/setup'
+require 'codebraker'
+require 'pry'
+require 'date'
+require 'yaml'
+
+require_relative 'config/i18n'
+require_relative 'modules/constants'
+require_relative 'modules/errors'
+require_relative 'modules/validation'
+require_relative 'modules/data_loader'
+require_relative 'lib/output_helper'
+require_relative 'lib/input_helper'
+require_relative 'lib/rating_console'
+require_relative 'lib/codebraker_console'
+require_relative 'lib/game_console'
+require_relative 'lib/registration_console'
+require_relative 'lib/start_console'
