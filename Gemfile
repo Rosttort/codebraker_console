@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'bundler', '~> 2.3.11'
+gem 'bundler', '~> 2.2.7'
 gem 'codebraker', git: 'https://github.com/Rosttort/codebraker', branch: :dev
 gem 'ffaker', '~> 2.21.0'
 gem 'i18n', '~> 1.8'
