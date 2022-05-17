@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RatingConsole do
+RSpec.describe Lib::RatingConsole do
   describe '::add' do
     let(:new_record) do
       {
@@ -47,8 +47,11 @@ RSpec.describe RatingConsole do
       ]
     end
 
-    it 'returns rating records with places' do
+    before do
       allow(described_class).to receive(:load_data).and_return(prepared_records)
+    end
+
+    it 'returns rating records with places' do
       expect(described_class.records).to eq(sorted_records)
     end
   end

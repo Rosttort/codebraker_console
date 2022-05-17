@@ -1,31 +1,33 @@
 # frozen_string_literal: true
 
-class StartConsole < CodebrakerConsole
-  def run
-    output_helper.introduction
-    game_menu
-  end
+module Lib
+  class StartConsole < Lib::CodebrakerConsole
+    def run
+      output_introduction_message
+      game_menu
+    end
 
-  def game_menu
-    output_helper.scenario(Constants::SCENARIO_COMMANDS.join(', '))
-    scenario = input_helper.scenario_command
-    send("#{scenario}_command")
-  end
+    def game_menu
+      output_scenario_message(Modules::Constants::SCENARIO_COMMANDS.join(', '))
+      scenario = input_scenario_command
+      send("#{scenario}_command")
+    end
 
-  private
+    private
 
-  def start_command
-    RegistrationConsole.new.run
-    game_menu
-  end
+    def start_command
+      Lib::RegistrationConsole.new.run
+      game_menu
+    end
 
-  def rules_command
-    output_helper.rules
-    game_menu
-  end
+    def rules_command
+      output_rules_message
+      game_menu
+    end
 
-  def rating_command
-    output_helper.rating(RatingConsole.records)
-    game_menu
+    def rating_command
+      output_rating_message(Lib::RatingConsole.records)
+      game_menu
+    end
   end
 end

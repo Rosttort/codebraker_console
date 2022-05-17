@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
-class CodebrakerConsole
-  attr_accessor :output_helper, :input_helper
+module Lib
+  class CodebrakerConsole
+    include Modules::OutputHelper
+    include Modules::InputHelper
 
-  def initialize
-    @output_helper = OutputHelper.new
-    @input_helper = InputHelper.new(@output_helper)
-  end
-
-  def exit_command
-    output_helper.exit_game
-    exit
+    def exit_command
+      output_exit_game_message
+      exit
+    end
   end
 end

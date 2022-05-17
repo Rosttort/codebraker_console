@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-module DataLoader
-  def save_data(data)
-    File.open(Constants::DATA_FILE, 'a') { |file| file.write(data.to_yaml) }
-  end
+module Modules
+  module DataLoader
+    def save_data(data)
+      File.open(Modules::Constants::DATA_FILE, 'a') { |file| file.write(data.to_yaml) }
+    end
 
-  def load_data
-    return [] unless File.exist?(Constants::DATA_FILE)
+    def load_data
+      return [] unless File.exist?(Modules::Constants::DATA_FILE)
 
-    YAML.load_stream(File.read(Constants::DATA_FILE)).map { |record| record } || []
+      YAML.load_stream(File.read(Modules::Constants::DATA_FILE)).map { |record| record } || []
+    end
   end
 end
