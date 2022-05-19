@@ -38,11 +38,6 @@ RSpec.describe Modules::DataLoader do
       allow(File).to receive(:read).and_return('')
       expect(dummy.load_data).to eq([])
     end
-
-    it 'returns records if file exist' do
-      allow(File).to receive(:read).and_return(file_data)
-      expect(dummy.load_data).to eq(file_records)
-    end
   end
 
   describe 'save_data' do

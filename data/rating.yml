@@ -2,19 +2,6 @@
 :name: Rost
 :difficulty: :easy
 :attempts: 15
-:attempts_left: 10
+:attempts_left: 9
 :hints: 2
 :hints_left: 2
----
-:secret_code:
-- '4'
-- '5'
-- '6'
-- '1'
-:name: Ame
-:difficulty: :easy
-:attempts: 15
-:attempts_left: 14
-:hints: 2
-:hints_left: 2
-:date: !ruby/object:DateTime 2021-02-23 14:28:52.481897200 +02:00
