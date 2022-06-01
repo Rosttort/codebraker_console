@@ -1,0 +1,33 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.0.0
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatStringToken:
+  EnforcedStyle: template
+
+Metrics/BlockLength:
+  IgnoredMethods: ["describe", "context"]
+  Exclude:
+    - "spec/**/*.rb"
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+  
+RSpec/SubjectStub:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
