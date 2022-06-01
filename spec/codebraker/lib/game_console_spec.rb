@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Lib::GameConsole do
-  subject { described_class.new(player_name, difficulty) } 
+  subject { described_class.new(player_name, difficulty) }
 
   let(:secret_code) { subject.game.secret_code.join }
   let(:player_name) { FFaker::Name.first_name }
@@ -9,7 +9,7 @@ RSpec.describe Lib::GameConsole do
 
   describe '#run' do
     let(:guess) { Array.new(Codebraker::Constants::CODE_LENGTH) { rand(Codebraker::Validation::CODE_NUMS) }.join.to_s }
-    let(:hint_command) { Modules::Constants::GAME_COMMANDS[:hint]}
+    let(:hint_command) { Modules::Constants::GAME_COMMANDS[:hint] }
 
     it 'command input' do
       allow(subject).to receive(:input_guess).and_return({ type: :command, value: hint_command })

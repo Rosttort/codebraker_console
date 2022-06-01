@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Modules::DataLoader do
-  subject{ Class.new { extend Modules::DataLoader } }
+  subject { Class.new { extend Modules::DataLoader } }
 
   describe 'load_data' do
     let(:file_data) do

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Modules::InputHelper do
-  subject{ Class.new { include Modules::InputHelper }.new }
+  subject { Class.new { include Modules::InputHelper }.new }
 
   describe '#player_name' do
     let(:valid_name) { FFaker::Name.first_name }
@@ -20,7 +20,7 @@ RSpec.describe Modules::InputHelper do
 
     it 'return exit if input exit' do
       allow(subject).to receive(:gets).and_return(Modules::Constants::EXIT_COMMAND)
-      expect(subject.input_player_name).to eq({ type: :command, value: Modules::Constants::EXIT_COMMAND})
+      expect(subject.input_player_name).to eq({ type: :command, value: Modules::Constants::EXIT_COMMAND })
     end
   end
 

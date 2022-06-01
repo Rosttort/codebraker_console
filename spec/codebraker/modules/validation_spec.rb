@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Modules::Validation do
-  subject{ (Class.new { include Modules::Validation }).new }
+  subject { (Class.new { include Modules::Validation }).new }
 
   describe '#validate scenario command' do
     let(:valid_command) { Modules::Constants::SCENARIO_COMMANDS.values.sample }

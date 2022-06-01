@@ -2,7 +2,7 @@
 
 RSpec.describe Lib::CodebrakerConsole do
   describe '#exit' do
-    subject{ described_class.new }
+    subject { described_class.new }
 
     it 'exit app' do
       expect(subject).to receive(:exit)

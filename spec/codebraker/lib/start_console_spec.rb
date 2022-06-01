@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Lib::StartConsole do
-  subject{ described_class.new }
+  subject { described_class.new }
 
   describe '#run' do
     it 'output welcome text' do

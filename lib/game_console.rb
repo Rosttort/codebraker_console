@@ -6,6 +6,7 @@ module Lib
 
     def initialize(player_name, difficulty)
       @game = Codebraker::Game.new(player_name, difficulty.to_sym)
+      super()
     end
 
     def run

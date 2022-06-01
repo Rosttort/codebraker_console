@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Modules::OutputHelper do
-  subject{ Class.new { include Modules::OutputHelper }.new }
+  subject { Class.new { include Modules::OutputHelper }.new }
 
   describe '#introduction' do
     it 'show introduction message' do
