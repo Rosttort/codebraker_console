@@ -28,4 +28,3 @@ RSpec/MultipleMemoizedHelpers:
   
 RSpec/SubjectStub:
   Enabled: false
-  

@@ -21,7 +21,7 @@ module Modules
       scenario_command
     rescue Modules::Errors::WrongScenarioError
       output_wrong_scenario_message
-      output_scenario_message(Modules::Constants::SCENARIO_COMMANDS.join(', '))
+      output_scenario_message(Modules::Constants::SCENARIO_COMMANDS.values.join(', '))
       retry
     end
 
@@ -36,7 +36,7 @@ module Modules
 
     def input_guess
       guess = gets.chomp
-      parse_input(guess, :guess, Modules::Constants::GAME_COMMANDS)
+      parse_input(guess, :guess, Modules::Constants::GAME_COMMANDS.values)
     rescue Codebraker::Errors::InvalidGuessError
       output_wrong_guess_message
       output_guess_message
@@ -49,7 +49,7 @@ module Modules
       approve_command
     rescue Modules::Errors::WrongApproveCommandError
       output_wrong_command_message
-      output_save_result_message(Modules::Constants::APPROVAL_COMMANDS.join('/'))
+      output_save_result_message(Modules::Constants::APPROVAL_COMMANDS.values.join('/'))
       retry
     end
 

@@ -6,7 +6,7 @@ module Modules
       puts I18n.t(:introduction_message)
     end
 
-    def output_scenario_message(commands)
+    def output_scenario_message(commands = Modules::Constants::SCENARIO_COMMANDS.values.join(', '))
       puts I18n.t(:select_scenario_message, commands: commands)
     end
 

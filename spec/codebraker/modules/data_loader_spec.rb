@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Modules::DataLoader do
-  subject(:dummy) { Class.new { extend Modules::DataLoader } }
+  subject{ Class.new { extend Modules::DataLoader } }
 
   describe 'load_data' do
     let(:file_data) do
@@ -31,12 +31,12 @@ RSpec.describe Modules::DataLoader do
 
     it 'returns empty array if file does not exist' do
       allow(File).to receive(:exist?).and_return(false)
-      expect(dummy.load_data).to eq([])
+      expect(subject.load_data).to eq([])
     end
 
     it 'returns empty array if file exist' do
       allow(File).to receive(:read).and_return('')
-      expect(dummy.load_data).to eq([])
+      expect(subject.load_data).to eq([])
     end
   end
 
@@ -58,7 +58,7 @@ RSpec.describe Modules::DataLoader do
     it 'creates file and saves data into it' do
       allow(File).to receive(:open).with(Modules::Constants::DATA_FILE, 'a').and_yield(file)
       expect(file).to receive(:write).with(data.to_yaml)
-      dummy.save_data(data)
+      subject.save_data(data)
     end
   end
 end

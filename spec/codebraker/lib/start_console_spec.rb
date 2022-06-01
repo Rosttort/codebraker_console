@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 RSpec.describe Lib::StartConsole do
-  subject(:start_console) { described_class.new }
+  subject{ described_class.new }
 
   describe '#run' do
     it 'output welcome text' do
-      expect(start_console).to receive(:game_menu)
-      start_console.run
+      expect(subject).to receive(:game_menu)
+      subject.run
     end
   end
 
@@ -14,41 +14,41 @@ RSpec.describe Lib::StartConsole do
     let(:registration_console_double) { instance_double(Lib::RegistrationConsole) }
 
     it 'call registration console when start' do
-      expect(start_console).to receive(:game_menu)
-      start_console.run
+      expect(subject).to receive(:game_menu)
+      subject.run
     end
   end
 
   describe '#rules' do
     it 'output rules' do
-      expect(start_console).to receive(:game_menu)
-      start_console.run
+      expect(subject).to receive(:game_menu)
+      subject.run
     end
   end
 
   describe '#game_menu' do
     it 'call start_command when start' do
-      allow(start_console).to receive(:input_scenario_command).and_return('start')
-      expect(start_console).to receive(:start_command)
-      start_console.run
+      allow(subject).to receive(:input_scenario_command).and_return(Modules::Constants::SCENARIO_COMMANDS[:start])
+      expect(subject).to receive(:start_command)
+      subject.run
     end
 
     it 'call rules_command when rules' do
-      allow(start_console).to receive(:input_scenario_command).and_return('rules')
-      expect(start_console).to receive(:rules_command)
-      start_console.run
+      allow(subject).to receive(:input_scenario_command).and_return(Modules::Constants::SCENARIO_COMMANDS[:rules])
+      expect(subject).to receive(:rules_command)
+      subject.run
     end
 
     it 'call rating_command when rating' do
-      allow(start_console).to receive(:input_scenario_command).and_return('rating')
-      expect(start_console).to receive(:rating_command)
-      start_console.run
+      allow(subject).to receive(:input_scenario_command).and_return(Modules::Constants::SCENARIO_COMMANDS[:rating])
+      expect(subject).to receive(:rating_command)
+      subject.run
     end
 
     it 'call exit_command when exit' do
-      allow(start_console).to receive(:input_scenario_command).and_return('exit')
-      expect(start_console).to receive(:exit_command)
-      start_console.run
+      allow(subject).to receive(:input_scenario_command).and_return(Modules::Constants::SCENARIO_COMMANDS[:exit])
+      expect(subject).to receive(:exit_command)
+      subject.run
     end
   end
 
@@ -77,8 +77,8 @@ RSpec.describe Lib::StartConsole do
     end
 
     it 'shows rating' do
-      expect(start_console).to receive(:game_menu)
-      start_console.run
+      expect(subject).to receive(:game_menu)
+      subject.run
     end
   end
 end

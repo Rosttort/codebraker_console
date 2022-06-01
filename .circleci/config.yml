@@ -30,4 +30,3 @@ workflows:
   sample:
     jobs:
       - build
-      

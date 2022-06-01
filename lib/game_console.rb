@@ -6,7 +6,6 @@ module Lib
 
     def initialize(player_name, difficulty)
       @game = Codebraker::Game.new(player_name, difficulty.to_sym)
-      super()
     end
 
     def run
@@ -47,14 +46,14 @@ module Lib
       end
     end
 
-    def win(guess)
+    def win(guess_code)
       output_win_message
-      give_answer(guess[:code])
+      give_answer(guess_code[:code])
     end
 
-    def lost(guess)
+    def lost(guess_code)
       output_lost_message
-      give_answer(guess[:code])
+      give_answer(guess_code[:code])
     end
 
     def give_answer(code)
@@ -62,7 +61,7 @@ module Lib
     end
 
     def save_result
-      output_save_result_message(Modules::Constants::APPROVAL_COMMANDS.join('/'))
+      output_save_result_message(Modules::Constants::APPROVAL_COMMANDS.values.join('/'))
       command = input_approve_command
       Lib::RatingConsole.add_data(game.to_h) if command == Modules::Constants::AGREE_COMMAND
     end

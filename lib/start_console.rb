@@ -8,7 +8,7 @@ module Lib
     end
 
     def game_menu
-      output_scenario_message(Modules::Constants::SCENARIO_COMMANDS.join(', '))
+      output_scenario_message(Modules::Constants::SCENARIO_COMMANDS.values.join(', '))
       scenario = input_scenario_command
       send("#{scenario}_command")
     end
